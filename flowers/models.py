@@ -22,8 +22,8 @@ class Flowerlot(models.Model):
     shade = models.CharField("Оттенок", max_length=50)
     quantity = models.IntegerField("Количество")
     price = models.DecimalField("Цена", max_digits=10, decimal_places=2)
-    user = models.ForeignKey(User, on_delete=models.SET_NULL,
-                             null=True, blank=True, related_name='users')
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE,
+                             related_name='users')
     LOAN_STATUS = (
         ('O', 'отображать'),
         ('F', 'не отображать'),
